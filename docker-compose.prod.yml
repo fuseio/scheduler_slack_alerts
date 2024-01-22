@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  bridge-eth-funder:
+  scheduler_slack_alerts:
     build:
       target: production
     command: node build/index.js

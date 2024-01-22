@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  bridge-eth-funder:
+  scheduler_slack_alerts:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,7 +9,8 @@ services:
     volumes:
       - ./src:/home/node/app/src
       - ./nodemon.json:/home/node/app/nodemon.json
-    container_name: bridge-eth-funder
+    container_name:
+      scheduler_slack_alerts
     expose:
       - "4000"
     ports:
