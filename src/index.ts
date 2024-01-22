@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 
 const scheduleTasks = () => {
-  const liquidityScheduler = new Scheduler(10000);
+  const liquidityScheduler = new Scheduler(60 * 60 * 1000);
   const liquidityTask = () => {
     console.log("Running liquidity task");
     const d = new Date();
