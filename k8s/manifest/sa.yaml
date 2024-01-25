@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bridge-liquidity-scheduler
+  namespace: default
+  labels:
+    app: bridge-liquidity-scheduler
+    environment: production
+  annotations:
+    iam.gke.io/gcp-service-account: fuse-etl-372416-gke-bq-sa@fuse-etl-372416.iam.gserviceaccount.com
