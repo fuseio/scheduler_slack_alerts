@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bridge-liquidity-scheduler
+  namespace: default
+  labels:
+    app: bridge-liquidity-scheduler
+    environment: production
+data:
+  weth_min_liquidity: "1"
+  usdc_min_liquidity: "2000"
+  usdt_min_liquidity: "2000"

@@ -1,0 +1,62 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bridge-liquidity-scheduler
+  namespace: default
+  labels:
+    app: bridge-liquidity-scheduler
+    environment: production
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: bridge-liquidity-scheduler
+      environment: production
+  template:
+    metadata:
+      labels:
+        app: bridge-liquidity-scheduler
+        environment: production
+    spec:
+      serviceAccountName: bridge-liquidity-scheduler
+      containers:
+        - name: bridge-liquidity-scheduler
+          image: europe-west1-docker.pkg.dev/fuse-etl-372416/bridge-liquidity-scheduler/bridge-liquidity-scheduler:latest
+          command: ["npm", "run", "dev"]
+          env:
+            - name: WETH_MIN_LIQUIDITY
+              valueFrom:
+                configMapKeyRef:
+                  name: bridge-liquidity-scheduler
+                  key: weth_min_liquidity
+            - name: USDC_MIN_LIQUIDITY
+              valueFrom:
+                configMapKeyRef:
+                  name: bridge-liquidity-scheduler
+                  key: usdc_min_liquidity
+            - name: USDT_MIN_LIQUIDITY
+              valueFrom:
+                configMapKeyRef:
+                  name: bridge-liquidity-scheduler
+                  key: usdt_min_liquidity
+
+            # Secret
+            - name: SLACK_WEBHOOK_URL
+              valueFrom:
+                secretKeyRef:
+                  name: bridge-liquidity-scheduler
+                  key: slack_webhook_url
+
+          # Resources
+          resources:
+            requests:
+              cpu: 500m
+              memory: 1Gi
+            limits:
+              cpu: 500m
+              memory: 1Gi
