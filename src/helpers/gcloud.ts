@@ -1,4 +1,4 @@
-const { BigQuery, BigQueryDatetime } = require("@google-cloud/bigquery");
+const { BigQuery } = require("@google-cloud/bigquery");
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -11,7 +11,7 @@ export async function insertRowsAsStream(
   datasetId = "",
   tableId = ""
 ) {
-  //console.log(rows);
+  if (rows.length == 0) return;
   await bigquery.dataset(datasetId).table(tableId).insert(rows);
   console.log(`Inserted ${rows.length} rows`);
 }

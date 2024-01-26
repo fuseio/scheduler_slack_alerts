@@ -15,18 +15,17 @@ export const getTotalSupply = async (date: BigQueryDate) => {
     let rowsToInsert = []
     for (let i = 0; i < appConfig.wrappedBridge.fuse.tokens.length; i++) {
         let token = appConfig.wrappedBridge.fuse.tokens[i]
-        if (token.symbol != "FUSE") {
-            let res = await getERC20TotalSupply(
-                token.address,
-                "https://rpc.fuse.io",
-                token.decimals
-            );
-            rowsToInsert.push({
-                token: token.symbol,
-                total_supply: parseFloat(res).toFixed(4),
-                date: date,
-            })
-        }
+        if (token.symbol == "FUSE") continue;
+        let res = await getERC20TotalSupply(
+            token.address,
+            "https://rpc.fuse.io",
+            token.decimals
+        );
+        rowsToInsert.push({
+            token: token.symbol,
+            total_supply: parseFloat(res).toFixed(4),
+            date: date,
+        })
     }
     insertRowsAsStream(
         rowsToInsert,
