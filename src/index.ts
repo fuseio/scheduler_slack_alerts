@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import { Scheduler } from './scheduler';
 import { getTotalSupply, getBridgeLiquidity } from './helpers/liquidity';
 import { BigQueryDatetime } from '@google-cloud/bigquery';
+import { getVoltageBridgeLiquidity } from './helpers/voltageLiquidity';
 dotenv.config();
 const app = express();
 
@@ -22,8 +23,21 @@ const scheduleTasks = () => {
     getTotalSupply(date)
     getBridgeLiquidity(date)
   }
+  const voltageLiquidity = () => {
+    console.log("Running voltage liquidity task");
+    const d = new Date();
+    const date = new BigQueryDatetime({
+      day: d.getDate(),
+      month: d.getMonth() + 1,
+      year: d.getFullYear(),
+      hours: d.getHours(),
+      minutes: d.getMinutes(),
+      seconds: d.getSeconds(),
+    });
+    getVoltageBridgeLiquidity(date)
+  }
+  liquidityScheduler.addTask(voltageLiquidity);
   liquidityScheduler.addTask(liquidityTask);
-  liquidityScheduler.start();
 }
 
 app.listen(4000, () => {

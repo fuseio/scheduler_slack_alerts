@@ -18,3 +18,9 @@ export const getERC20TotalSupply = async (contractAddress: string, rpcUrl: strin
   const totalSupply = await contract.totalSupply();
   return ethers.utils.formatUnits(totalSupply, decimals);
 };
+
+export const getNativeBalance = async (address: string, rpcUrl: string, decimals: number) => {
+  const provider = new ethers.providers.JsonRpcProvider(rpcUrl);
+  const balance = await provider.getBalance(address)
+  return ethers.utils.formatUnits(balance, decimals);
+}
