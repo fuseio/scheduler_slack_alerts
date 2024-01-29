@@ -38,6 +38,7 @@ const scheduleTasks = () => {
   }
   liquidityScheduler.addTask(voltageLiquidity);
   liquidityScheduler.addTask(liquidityTask);
+  liquidityScheduler.start()
 }
 
 app.listen(4000, () => {
