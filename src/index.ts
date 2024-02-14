@@ -10,31 +10,39 @@ const app = express();
 const scheduleTasks = () => {
   const liquidityScheduler = new Scheduler(60 * 60 * 1000);
   const liquidityTask = () => {
-    console.log("Running liquidity task");
-    const d = new Date();
-    const date = new BigQueryDatetime({
-      day: d.getDate(),
-      month: d.getMonth() + 1,
-      year: d.getFullYear(),
-      hours: d.getHours(),
-      minutes: d.getMinutes(),
-      seconds: d.getSeconds(),
-    });
-    getTotalSupply(date)
-    getBridgeLiquidity(date)
+    try {
+      console.log("Running liquidity task");
+      const d = new Date();
+      const date = new BigQueryDatetime({
+        day: d.getDate(),
+        month: d.getMonth() + 1,
+        year: d.getFullYear(),
+        hours: d.getHours(),
+        minutes: d.getMinutes(),
+        seconds: d.getSeconds(),
+      });
+      getTotalSupply(date)
+      getBridgeLiquidity(date)
+    } catch (e) {
+      console.log(e);
+    }
   }
   const voltageLiquidity = () => {
-    console.log("Running voltage liquidity task");
-    const d = new Date();
-    const date = new BigQueryDatetime({
-      day: d.getDate(),
-      month: d.getMonth() + 1,
-      year: d.getFullYear(),
-      hours: d.getHours(),
-      minutes: d.getMinutes(),
-      seconds: d.getSeconds(),
-    });
-    getVoltageBridgeLiquidity(date)
+    try {
+      console.log("Running voltage liquidity task");
+      const d = new Date();
+      const date = new BigQueryDatetime({
+        day: d.getDate(),
+        month: d.getMonth() + 1,
+        year: d.getFullYear(),
+        hours: d.getHours(),
+        minutes: d.getMinutes(),
+        seconds: d.getSeconds(),
+      });
+      getVoltageBridgeLiquidity(date)
+    } catch (e) {
+      console.log(e);
+    }
   }
   liquidityScheduler.addTask(voltageLiquidity);
   liquidityScheduler.addTask(liquidityTask);
