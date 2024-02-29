@@ -25,6 +25,7 @@ const scheduleTasks = () => {
       getBridgeLiquidity(date)
     } catch (e) {
       console.log(e);
+      process.exit(1)
     }
   }
   const voltageLiquidity = () => {
@@ -42,6 +43,7 @@ const scheduleTasks = () => {
       getVoltageBridgeLiquidity(date)
     } catch (e) {
       console.log(e);
+      process.exit(1)
     }
   }
   liquidityScheduler.addTask(voltageLiquidity);
