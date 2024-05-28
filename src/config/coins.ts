@@ -23,6 +23,18 @@ export const coins = [
         decimals: 6,
         coinGeckoId: "tether",
     },
+    {
+        name: "Freedom",
+        symbol: "FDM",
+        decimals: 18,
+        coinGeckoId: "fdm",
+    },
+    {
+        name: "BNB",
+        symbol: "BNB",
+        decimals: 18,
+        coinGeckoId: "binancecoin",
+    },
 ];
 
 

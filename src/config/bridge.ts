@@ -291,6 +291,55 @@ export const bridgeConfig = {
                 address: "0x55d398326f99059ff775485246999027b3197955",
             },
         ],
+        [
+            {
+                chainId: 138,
+                decimals: 18,
+                symbol: "FDM",
+                name: "Freedom",
+                isBridged: true,
+                isNative: false,
+                address: "0xE3Df2C1f1ca54707AB49747eeBc7658bb1c8Bf1C",
+            },
+            {
+                chainId: 101,
+                decimals: 18,
+                symbol: "FDM",
+                name: "Freedom",
+                isBridged: false,
+                isNative: false,
+                address: "0x60d91f6D394c5004A782E0D175E2b839e078FB83",
+            },
+        ],
+        [
+            {
+                chainId: 138,
+                decimals: 18,
+                symbol: "BNB",
+                name: "Binance Coin",
+                isBridged: true,
+                isNative: false,
+                address: "0x117C0419352DDB6FE575A67FAa70315BDc4a93f3"
+            },
+            {
+                chainId: 101,
+                decimals: 18,
+                symbol: "BNB",
+                name: "Binance Coin",
+                isBridged: false,
+                isNative: false,
+                address: "0xB8c77482e45F1F44dE1745F52C74426C631bDD52",
+            },
+            {
+                chainId: 102,
+                decimals: 18,
+                symbol: "BNB",
+                name: "Binance Coin",
+                isBridged: false,
+                isNative: true,
+                address: "0x",
+            },
+        ],
     ],
 };
 

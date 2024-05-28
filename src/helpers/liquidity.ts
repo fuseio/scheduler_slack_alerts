@@ -9,7 +9,8 @@ dotenv.config();
 const WETH_MIN_LIQUIDITY = parseInt(process.env.WETH_MIN_LIQUIDITY || "1");
 const USDC_MIN_LIQUIDITY = parseInt(process.env.USDC_MIN_LIQUIDITY || "1");
 const USDT_MIN_LIQUIDITY = parseInt(process.env.USDT_MIN_LIQUIDITY || "1");
-
+const FDM_MIN_LIQUIDITY = parseInt(process.env.FDM_MIN_LIQUIDITY || "1");
+const BNB_MIN_LIQUIDITY = parseInt(process.env.BNB_MIN_LIQUIDITY || "1");
 
 export const getTotalSupply = async (date: BigQueryDate) => {
     let rowsToInsert = []
@@ -86,6 +87,12 @@ const checkLowLiquidity = async (token: string, balance: number, chain: string, 
         sendLowLiquidityAlert(token, balance, `${explorer}address/${address}`, chain)
     }
     if (token == "USDT" && balance < USDT_MIN_LIQUIDITY) {
+        sendLowLiquidityAlert(token, balance, `${explorer}address/${address}`, chain)
+    }
+    if (token == "FDM" && balance < FDM_MIN_LIQUIDITY) {
+        sendLowLiquidityAlert(token, balance, `${explorer}address/${address}`, chain)
+    }
+    if (token == "BNB" && balance < BNB_MIN_LIQUIDITY) {
         sendLowLiquidityAlert(token, balance, `${explorer}address/${address}`, chain)
     }
 }
