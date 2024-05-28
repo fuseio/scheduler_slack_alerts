@@ -9,8 +9,8 @@ dotenv.config();
 const WETH_MIN_LIQUIDITY = parseInt(process.env.WETH_MIN_LIQUIDITY || "1");
 const USDC_MIN_LIQUIDITY = parseInt(process.env.USDC_MIN_LIQUIDITY || "1");
 const USDT_MIN_LIQUIDITY = parseInt(process.env.USDT_MIN_LIQUIDITY || "1");
-const FDM_MIN_LIQUIDITY = parseInt(process.env.FDM_MIN_LIQUIDITY || "1");
-const BNB_MIN_LIQUIDITY = parseInt(process.env.BNB_MIN_LIQUIDITY || "1");
+const FDM_MIN_LIQUIDITY = parseInt(process.env.FDM_MIN_LIQUIDITY || "50000");
+const BNB_MIN_LIQUIDITY = parseInt(process.env.BNB_MIN_LIQUIDITY || "5");
 
 export const getTotalSupply = async (date: BigQueryDate) => {
     let rowsToInsert = []
