@@ -35,6 +35,12 @@ export const coins = [
         decimals: 18,
         coinGeckoId: "binancecoin",
     },
+    {
+        name: "Matic Token",
+        symbol: "MATIC",
+        decimals: 18,
+        coinGeckoId: "matic-network",
+    },
 ];
 
 
