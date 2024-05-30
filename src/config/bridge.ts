@@ -315,35 +315,6 @@ export const bridgeConfig = {
             {
                 chainId: 138,
                 decimals: 18,
-                symbol: "BNB",
-                name: "Binance Coin",
-                isBridged: true,
-                isNative: false,
-                address: "0x117C0419352DDB6FE575A67FAa70315BDc4a93f3"
-            },
-            {
-                chainId: 101,
-                decimals: 18,
-                symbol: "BNB",
-                name: "Binance Coin",
-                isBridged: false,
-                isNative: false,
-                address: "0xB8c77482e45F1F44dE1745F52C74426C631bDD52",
-            },
-            {
-                chainId: 102,
-                decimals: 18,
-                symbol: "BNB",
-                name: "Binance Coin",
-                isBridged: false,
-                isNative: false,
-                address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-            },
-        ],
-        [
-            {
-                chainId: 138,
-                decimals: 18,
                 symbol: "MATIC",
                 name: "Matic Token",
                 isBridged: true,
@@ -377,7 +348,36 @@ export const bridgeConfig = {
                 isNative: false,
                 address: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270"
             },
-        ]
+        ],
+        [
+            {
+                chainId: 138,
+                decimals: 18,
+                symbol: "BNB",
+                name: "Binance Coin",
+                isBridged: true,
+                isNative: false,
+                address: "0x117C0419352DDB6FE575A67FAa70315BDc4a93f3"
+            },
+            {
+                chainId: 101,
+                decimals: 18,
+                symbol: "BNB",
+                name: "Binance Coin",
+                isBridged: false,
+                isNative: false,
+                address: "0xB8c77482e45F1F44dE1745F52C74426C631bDD52",
+            },
+            {
+                chainId: 102,
+                decimals: 18,
+                symbol: "BNB",
+                name: "Binance Coin",
+                isBridged: false,
+                isNative: false,
+                address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            },
+        ],
     ],
 };
 

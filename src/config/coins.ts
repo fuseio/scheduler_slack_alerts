@@ -30,16 +30,16 @@ export const coins = [
         coinGeckoId: "fdm",
     },
     {
-        name: "BNB",
-        symbol: "BNB",
-        decimals: 18,
-        coinGeckoId: "binancecoin",
-    },
-    {
         name: "Matic Token",
         symbol: "MATIC",
         decimals: 18,
         coinGeckoId: "matic-network",
+    },
+    {
+        name: "BNB",
+        symbol: "BNB",
+        decimals: 18,
+        coinGeckoId: "binancecoin",
     },
 ];
 
