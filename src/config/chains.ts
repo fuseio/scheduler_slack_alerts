@@ -37,5 +37,12 @@ export const chains = [
         rpc: "https://weathered-side-brook.bsc.quiknode.pro/f11b337cb3411c96e514504308b95f17288330f4/",
         explorerUrl: "https://bscscan.com/",
     },
+    {
+        chainName: "Base",
+        lzChainId: 184,
+        chainId: 8453,
+        rpc: "https://base-mainnet.g.alchemy.com/v2/Onbgi2ZMX4X51FPJFOAiIOG2vnRSSKkx",
+        explorerUrl: "https://basescan.com/",
+    }
 ];
 
