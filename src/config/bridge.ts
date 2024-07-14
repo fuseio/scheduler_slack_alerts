@@ -29,6 +29,10 @@ export const bridgeConfig = {
             address: "0x081dF5af5d022D4A4a4520D4D0D336B8432fDBBb",
             chainId: 102,
         },
+        {
+            address: "0xe453d6649643F1F460C371dC3D1da98F7922fe51",
+            chainId: 184,
+        }
     ],
     wrapped: [
         {
@@ -47,6 +51,14 @@ export const bridgeConfig = {
             address: "0xe453d6649643F1F460C371dC3D1da98F7922fe51",
             chainId: 110,
         },
+        {
+            address: "0xADef29442A11ad9308aC5D012965c887Cf2A53D3",
+            chainId: 102,
+        },
+        {
+            address: "0x6041d22c7458A974Cb6E752D75D03D74dcCFf522",
+            chainId: 184,
+        },
     ],
     originalFuse: [
         {
@@ -64,6 +76,14 @@ export const bridgeConfig = {
         {
             address: "0x56dF61E9f39C75e2d84C05753557bEBB9841Eb5B",
             chainId: 110,
+        },
+        {
+            address: "0x6bd341B6C7d6123D28d3DDee6A65d441DbAC1E90",
+            chainId: 102,
+        },
+        {
+            address: "0x691118FBDa4B78747B4C1B883ae4396Dac885651",
+            chainId: 184,
         },
     ],
     tokens: [
